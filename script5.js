@@ -28,10 +28,14 @@ for (var x = 0; x <= 20; x++) {
 }
 
 /*ZADATAK 2 */
-let z = 2;
-let y = 5;
+var x;
+var z = 2;
+var y = 18;
+
 if (z === 2) {
-  console.log(y);
+  x = y;
 } else {
-  console.log(5);
+  x = 5;
 }
+
+console.log(x);
