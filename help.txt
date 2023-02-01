@@ -1,2 +1,7 @@
 https://builtwith.com/
 
+1. varijable
+2. funkcije
+3. petlje
+4. polja / nizovi
+5. objekti
