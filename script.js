@@ -39,6 +39,13 @@ function renderToDoTasks(tasks) {
     const deleteEl = document.createElement("a");
     deleteEl.className = "todo__task-delete";
     deleteEl.innerText = "Delete";
+    deleteEl.addEventListener("click", function (event) {
+      let currentText = event.target.previousSibling.innerText;
+      currentText = currentText.substring(currentText.indexOf(" ") + 1);
+
+      tasks.splice(tasks.indexOf(currentText), 1);
+      renderToDoTasks(tasks);
+    });
 
     taskEl.appendChild(paragraphEl);
     taskEl.appendChild(deleteEl);
