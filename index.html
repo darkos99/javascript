@@ -20,11 +20,13 @@
               placeholder="Enter To-Do task..."
             />
           </form>
+          <p class="todo__error-message">Task is already in list</p>
+          <!--<div class="todo__tasks">There is no tasks!</div> -->
           <div class="todo__tasks">
-            <div class="todo__task">1. Neki task</div>
-            <div class="todo__task">2. Neki task</div>
-            <div class="todo__task">3. Neki task</div>
-            <div class="todo__task">4. Neki task</div>
+            <div class="todo__task">
+              <p>1. task</p>
+              <a class="todo__task-delete" href="#">Delete</a>
+            </div>
           </div>
         </div>
       </section>

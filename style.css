@@ -4,30 +4,49 @@
   padding: 0;
 }
 .section {
-    padding: 120px 0;
+  padding: 120px 0;
 }
 .todo {
-    padding: 32px;
-    max-width: 600px;
-    border-radius: 16px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    margin: 0 auto;
+  padding: 32px;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 0 auto;
 }
-}
+
 .todo__form {
 }
+
+.todo__error-message {
+  display: none;
+  text-align: center;
+  background-color: #fca4a4;
+  color: #a50000;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
 .todo__input {
-    width: 100%;
-    line-height: 48px;
-    margin-bottom: 32px;
-    padding: 0 12px;
-    font-size: 18px;
+  width: 100%;
+  line-height: 48px;
+  margin-bottom: 32px;
+  padding: 0 12px;
+  font-size: 18px;
 }
 .todo__tasks {
 }
 .todo__task {
-    display: flex;
-    align-items: center;
-    height: 48px;
-    border-bottom: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  border-bottom: 1px solid #efefef;
+}
+
+.todo__task-delete {
+  text-decoration: none;
+  color: red;
+  padding: 6px 0;
+  font-weight: bold;
 }
