@@ -2,8 +2,16 @@ const inputEl = document.querySelector(".todo__input");
 const todoTasksEl = document.querySelectorAll(".todo__task");
 const todoTasksList = document.querySelector(".todo__tasks");
 const errorMessageEl = document.querySelector(".todo__error-message");
+const tasks =
+  localStorage.getItem("tasks") === null
+    ? []
+    : JSON.parse(localStorage.getItem("tasks"));
 
-const tasks = [];
+if (localStorage.getItem("tasks") !== null) {
+  renderToDoTasks(tasks);
+}
+
+//const tasks = [];
 
 inputEl.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -17,6 +25,7 @@ inputEl.addEventListener("keydown", function (event) {
       tasks.push(task);
       inputEl.value = "";
 
+      localStorage.setItem("tasks", JSON.stringify(tasks));
       renderToDoTasks(tasks);
     } else {
       errorMessageEl.style.display = "block";
@@ -44,6 +53,7 @@ function renderToDoTasks(tasks) {
       currentText = currentText.substring(currentText.indexOf(" ") + 1);
 
       tasks.splice(tasks.indexOf(currentText), 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
       renderToDoTasks(tasks);
     });
 
