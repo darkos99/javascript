@@ -20,7 +20,15 @@ export const lecture = [
     length: "300min",
   },
   {
-    name: "Napredno",
+    name: "Next.js",
     length: "90min",
+  },
+  {
+    name: "PHP",
+    length: "190min",
+  },
+  {
+    name: "Angular",
+    length: "350min",
   },
 ];
