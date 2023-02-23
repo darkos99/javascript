@@ -1,50 +1,41 @@
-/* const processOrder = function (name, meal, estimation, callback) {
-  const status = `${name}'s ${meal} is preparing!`;
-  callback(status);
+import Lottery from "./modules/lottery.js";
+import { politicians } from "./data/data.js";
 
-  setTimeout(function () {
-    const status = `${name}'s ${meal} is prepared!`;
-    callback(status);
-  }, estimation);
-};
+const buttonStartLotteryEl = document.querySelector(".button-start-lottery");
+const lottteryResultsEl = document.querySelector(".lottery-results");
+const winningCombinationEl = document.querySelector(".winning-combination");
+const winningMessageEl = document.querySelector(".winners-message");
+const winnersEl = document.querySelector(".winners");
 
-console.log("Matilda orders...");
-processOrder("Matilda", "Cheesburger", 2000, function (status) {
-  console.log(status);
-}); */
+const lottery = new Lottery(politicians);
 
-const buildSomething = function (housePart, estimate) {
-  console.log(housePart + " building started...");
+buttonStartLotteryEl.addEventListener("click", function () {
+  buttonStartLotteryEl.disabled = true;
+  buttonStartLotteryEl.innerText = "Lottery drawing in progress...";
+  lottteryResultsEl.style.display = "none";
 
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-      if (true) {
-        resolve("ready");
-      } else {
-        reject("Unexpected error found, building can not be continued!");
-      }
-    }, estimate);
-  });
-};
+  lottery
+    .startDrawing()
+    .then((result) => {
+      winnersEl.display = "block";
+      winningCombinationEl.innerText = `Winning combination was: ${result.winningCombination}`;
+      winningMessageEl.innerText = "Winners:";
 
-buildSomething("Foundations", 1000)
-  .then((status) => {
-    console.log(`Foundations are ${status}`);
-    return buildSomething("Walls", 1000);
-  })
-  .then((status) => {
-    console.log(`Walls are ${status}`);
-    return buildSomething("Roof", 2000);
-  })
-  .then((status) => {
-    console.log(`Roof is ${status}`);
-    return buildSomething("House is built!");
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-  .finally(() => {
-    console.log(
-      "Bez obzira da li se pokrenuo reject ili resolve ja ću se uvijek pokrenuti!"
-    );
-  });
+      let winnersList = "";
+      result.winners.forEach(
+        (winner) => (winnersList += `<li>${winner.getPlayerDetails()}</li>`)
+      );
+
+      winnersEl.innerHTML = winnersList;
+    })
+    .catch((result) => {
+      winnersEl.display = "none";
+      winningCombinationEl.innerHTML = `Winning combination was: ${result.winningCombination}`;
+      winningMessageEl.innerHTML = "There are no winners!";
+    })
+    .finally(() => {
+      buttonStartLotteryEl.disabled = false;
+      buttonStartLotteryEl.innerText = "Start lottery drawing";
+      lottteryResultsEl.style.display = "block";
+    });
+});
