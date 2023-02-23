@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.containter__form {
+}
+.container__input {
+}
+.grid {
+  display: grid;
+  justify-content: space-evenly;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid__item {
+}
