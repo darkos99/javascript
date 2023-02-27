@@ -2,27 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Search App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
   </head>
   <body>
-    <header class="header">
-      <h1>SEARCH APP</h1>
-    </header>
     <main>
-      <div class="container">
-        <form class="containter__form">
-          <input type="text" class="container__input" placeholder="Search..." />
-        </form>
-      </div>
-      <div class="grid">
-        <p class="grid__item">1</p>
-        <p class="grid__item">2</p>
-      </div>
-      <script src="script.js"></script>
+      <section class="section">
+        <h1 class="section__title">Search App</h1>
+        <input type="text" class="search-input" />
+        <p class="alert"></p>
+        <div class="grid"></div>
+      </section>
     </main>
-    <footer></footer>
   </body>
 </html>
