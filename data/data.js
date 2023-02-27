@@ -1,34 +1,34 @@
-export const lecture = [
+export const lectures = [
   {
-    name: "HTML",
-    length: "120min",
+    lectureName: "HTML",
+    lectureLength: 90,
   },
   {
-    name: "CSS",
-    length: "60min",
+    lectureName: "CSS",
+    lectureLength: 120,
   },
   {
-    name: "JavaScript",
-    length: "300min",
+    lectureName: "JavaScript",
+    lectureLength: 90,
   },
   {
-    name: "GIT",
-    length: "10min",
+    lectureName: "GIT",
+    lectureLength: 80,
   },
   {
-    name: "React",
-    length: "300min",
+    lectureName: "React",
+    lectureLength: 10,
   },
   {
-    name: "Next.js",
-    length: "90min",
+    lectureName: "Next.js",
+    lectureLength: 190,
   },
   {
-    name: "PHP",
-    length: "190min",
+    lectureName: "PHP",
+    lectureLength: 190,
   },
   {
-    name: "Angular",
-    length: "350min",
+    lectureName: "Tin.java.js",
+    lectureLength: 190,
   },
 ];
